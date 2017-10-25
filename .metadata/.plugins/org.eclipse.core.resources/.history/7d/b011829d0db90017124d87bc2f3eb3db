@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Primeiro Projeto</title>
+</head>
+<body>
+<form action="SegundoServer" method="post">
+	name: <input type="text" name="nome" id="nome">
+	<input type="submit" title="enviar" value="enviar">
+
+</form>
+</body>
+</html>
