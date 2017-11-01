@@ -1,6 +1,8 @@
 package br.com.primeiroProjeto;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +32,23 @@ public class SegundoServer extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
+		RequestDispatcher rd = null;
+		
+		if(login.equals("ygo") && senha.equals("123")){
+		request.setAttribute("login", login);
+		rd = request.getRequestDispatcher("/Sucesso.jsp");
+		
+		}else{
+			
+		rd = request.getRequestDispatcher("/Erro.jsp");	
+		
+		}
+		
+		rd.forward(request, response);
+		System.out.println(login);
+		System.out.println(senha);
 	}
 
 }
